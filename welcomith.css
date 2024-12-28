@@ -1,0 +1,129 @@
+:root {
+    --background: #1E3E62;
+    --primary: #FFBF61;
+    --nav: #72BF78;
+    --font: #fff;
+    --hover: #DDD8D8;
+    --box1: #C4E1F6;
+    --box2: #F4EEEE;
+    --card: #C62E2E;
+}
+
+    body {
+        background-color: var(--background);
+        color: var(--font);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        text-align: center;
+        background-color:var(--font);
+        padding: 30px;
+        border-radius: 8px;
+        max-width: 400px;
+    }
+    .logo img {
+        width: 100px;
+        margin-bottom: 20px;
+    }
+    .welcome-message {
+        font-size: 16px;
+        margin-bottom: 20px;
+        color: #000;
+    }
+    .btn-masuk {
+        background-color: var(--primary);
+        color: var(--font);
+        border: none;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    .btn-masuk:hover {
+        background-color: var(--primary);
+    }
+    .btn-download {
+        background-color: var(--nav);
+        color: white;
+        border: none;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .btn-download:hover {
+        background-color: var(--nav);
+    }
+
+    :root {
+        --background: #1E3E62;
+        --primary: #FFBF61;
+        --nav: #72BF78;
+        --font: #fff;
+        --hover: #DDD8D8;
+        --box1: #C4E1F6;
+        --box2: #F4EEEE;
+        --card: #C62E2E;
+    }
+    
+    /* Background setup */
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url('your-background-image.jpg'); /* Set your background image here */
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    /* Form container */
+    .login-container {
+        background-color: rgba(255, 255, 255, 0.8); /* Transparent white */
+        border-radius: 10px;
+        padding: 30px;
+        width: 300px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+    
+    /* Profile icon */
+    .login-container .profile-icon {
+        font-size: 40px;
+        color: #555;
+        margin-bottom: 20px;
+    }
+    
+    /* Form fields */
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    
+    /* Login button */
+    .login-container button {
+        width: 100%;
+        padding: 12px;
+        background-color: #003366;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    .login-container button:hover {
+        background-color: #002244;
+    }
+    
