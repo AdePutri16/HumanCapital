@@ -28,33 +28,29 @@
                 android:padding="16dp"
                 android:text="Data Diri"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:gravity="center"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- Header Title -->
             <ImageView
                 android:id="@+id/ivBack"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
                 android:contentDescription="Tombol Kembali"
                 android:src="@drawable/panah_kembali"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="11dp"
+                tools:layout_editor_absoluteY="16dp" />
 
-            <!-- Foto Profil -->
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imgProfile"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/circle"
                 android:contentDescription="Foto Profil"
@@ -71,219 +67,202 @@
                 android:text="Update Foto"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imgProfile" />
+                android:backgroundTint="#FFB74D"
+                android:textColor="@android:color/black"
+                app:layout_constraintTop_toBottomOf="@id/imgProfile"
+                android:layout_marginTop="16dp" />
 
-            <!-- NIP -->
-            <TextView
-                android:id="@+id/tvNip"
-                android:layout_width="wrap_content"
+            <!-- TableLayout -->
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="NIP"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnUpdatePhoto"
                 android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp" />
+                android:padding="16dp"
+                android:stretchColumns="1"
+                app:layout_constraintTop_toBottomOf="@id/btnUpdatePhoto">
 
-            <EditText
-                android:id="@+id/etNip"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="00234567"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvNip"
-                android:layout_marginHorizontal="16dp" />
+                <!-- Baris 1: NIP -->
+                <TableRow
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NIP"
+                        android:paddingEnd="16dp"
+                        android:paddingStart="16dp"
+                        android:gravity="start" />
 
-            <!-- Nama -->
-            <TextView
-                android:id="@+id/tvNama"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nama"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etNip"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="16dp" />
+                    <TextView
+                        android:id="@+id/tvNip"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="00234567"
+                        android:layout_weight="1"
+                        android:inputType="text" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/etNama"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="Ade Putri Bustan"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvNama"
-                android:layout_marginHorizontal="16dp" />
+                <!-- Baris 2: Nama -->
+                <TableRow
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nama"
+                        android:paddingEnd="16dp"
+                        android:paddingStart="16dp"
+                        android:gravity="start" />
 
-            <!-- Tempat dan Tanggal Lahir -->
-            <TextView
-                android:id="@+id/tvTTL"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tempat Tanggal Lahir"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etNama"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="16dp" />
+                    <TextView
+                        android:id="@+id/tvNama"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Ade Putri Bustan"
+                        android:layout_weight="1"
+                        android:inputType="text" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/etTempat"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="Parepare"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/etTanggal"
-                app:layout_constraintTop_toBottomOf="@id/tvTTL"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="8dp" />
+                <!-- Baris 3: Tempat dan Tanggal Lahir -->
+                <TableRow
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tempat Tanggal Lahir"
+                        android:paddingEnd="16dp"
+                        android:paddingStart="16dp"
+                        android:gravity="start" />
 
-            <EditText
-                android:id="@+id/etTanggal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="16/01/2024"
-                android:inputType="date"
-                app:layout_constraintStart_toEndOf="@+id/etTempat"
-                app:layout_constraintEnd_toStartOf="@+id/imgCalendar"
-                app:layout_constraintTop_toBottomOf="@id/tvTTL"
-                android:layout_marginEnd="8dp" />
+                    <TextView
+                        android:id="@+id/tvTempat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Parepare"
+                        android:layout_weight="1" />
 
-            <ImageView
-                android:id="@+id/imgCalendar"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginEnd="16dp"
-                android:src="@android:drawable/ic_menu_my_calendar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/etTanggal" />
+                    <TextView
+                        android:id="@+id/tvTanggal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="16/01/2024"
+                        android:layout_weight="1" />
+                </TableRow>
 
-            <!-- Jenis Kelamin -->
-            <TextView
-                android:id="@+id/tvJenisKelamin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Jenis Kelamin"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etTanggal"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="16dp" />
+                <!-- Baris 4: Jenis Kelamin -->
+                <TableRow
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jenis Kelamin"
+                        android:paddingEnd="16dp"
+                        android:paddingStart="16dp"
+                        android:gravity="start" />
 
-            <EditText
-                android:id="@+id/etJenisKelamin"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="Laki-laki/Perempuan"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvJenisKelamin"
-                android:layout_marginHorizontal="16dp" />
+                    <TextView
+                        android:id="@+id/tvJenisKelamin"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Laki-laki/Perempuan"
+                        android:layout_weight="1" />
+                </TableRow>
 
-            <!-- NIK -->
-            <TextView
-                android:id="@+id/tvNik"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="NIK"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etJenisKelamin"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="16dp" />
+                <!-- Baris 5: NIK -->
+                <TableRow
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NIK"
+                        android:paddingEnd="16dp"
+                        android:paddingStart="16dp"
+                        android:gravity="start" />
 
-            <EditText
-                android:id="@+id/etNik"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="Masukkan NIK"
-                android:inputType="number"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvNik"
-                android:layout_marginHorizontal="16dp" />
+                    <TextView
+                        android:id="@+id/tvNik"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Masukkan NIK"
+                        android:inputType="number"
+                        android:layout_weight="1" />
+                </TableRow>
 
-            <!-- NPWP -->
-            <TextView
-                android:id="@+id/tvNpwp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="NPWP"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etNik"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="16dp" />
+                <!-- Baris 6: NPWP -->
+                <TableRow
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NPWP"
+                        android:paddingEnd="16dp"
+                        android:paddingStart="16dp"
+                        android:gravity="start" />
 
-            <EditText
-                android:id="@+id/etNpwp"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="Masukkan NPWP"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvNpwp"
-                android:layout_marginHorizontal="16dp" />
+                    <TextView
+                        android:id="@+id/tvNpwp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Masukkan NPWP"
+                        android:layout_weight="1" />
+                </TableRow>
 
-            <!-- Jabatan -->
-            <TextView
-                android:id="@+id/tvJabatan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Jabatan"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etNpwp"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="16dp" />
+                <!-- Baris 7: Jabatan -->
+                <TableRow
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jabatan"
+                        android:paddingEnd="16dp"
+                        android:paddingStart="16dp"
+                        android:gravity="start" />
 
-            <EditText
-                android:id="@+id/etJabatan"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="Masukkan Jabatan"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvJabatan"
-                android:layout_marginHorizontal="16dp" />
+                    <TextView
+                        android:id="@+id/tvJabatan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Masukkan Jabatan"
+                        android:layout_weight="1" />
+                </TableRow>
 
-            <!-- Telepon -->
-            <TextView
-                android:id="@+id/tvTelepon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Telepon"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etJabatan"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="16dp" />
+                <!-- Baris 8: Telepon -->
+                <TableRow
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Telepon"
+                        android:paddingEnd="16dp"
+                        android:paddingStart="16dp"
+                        android:gravity="start" />
 
-            <EditText
-                android:id="@+id/etTelepon"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="Masukkan Telepon"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvTelepon"
-                android:layout_marginHorizontal="16dp" />
+                    <TextView
+                        android:id="@+id/tvTelepon"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Masukkan Telepon"
+                        android:layout_weight="1" />
+                </TableRow>
 
-            <!-- Email -->
-            <TextView
-                android:id="@+id/tvEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Email"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etTelepon"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="16dp" />
+                <!-- Baris 9: Email -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:paddingEnd="16dp"
+                        android:paddingStart="16dp"
+                        android:gravity="start" />
 
-            <EditText
-                android:id="@+id/etEmail"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="Masukkan Email"
-                android:inputType="textEmailAddress"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvEmail"
-                android:layout_marginHorizontal="16dp" />
+                    <TextView
+                        android:id="@+id/tvEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Masukkan Email"
+                        android:inputType="textEmailAddress"
+                        android:layout_weight="1" />
+                </TableRow>
+            </TableLayout>
 
             <!-- Button Edit -->
             <Button
@@ -293,8 +272,10 @@
                 android:text="Edit"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etEmail"
-                android:layout_marginTop="16dp" />
+                app:layout_constraintTop_toBottomOf="@id/tableLayout"
+                android:backgroundTint="#FFB74D"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="24dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

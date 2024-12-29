@@ -1,61 +1,98 @@
 package com.example.ptc;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class notifikasiActivity extends AppCompatActivity {
 
-    // Deklarasi TextView untuk notifikasi item 1
-    private TextView tvDateRange1, tvStatus1, tvApprovalStatus1, tvRequestDate1;
+    // Referensi ke Firebase Database
+    private DatabaseReference databaseReference;
 
-    // Deklarasi TextView untuk notifikasi item 2
-    private TextView tvDateRange2, tvStatus2, tvApprovalStatus2, tvRequestDate2;
+    // Kontainer untuk menampilkan notifikasi
+    private LinearLayout notificationContainer;
 
-    // Deklarasi ImageView untuk back button
-    private ImageView ivBack;
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifikasi);
 
-        // Inisialisasi TextView notifikasi item 1
-        tvDateRange1 = findViewById(R.id.tvDateRange1);
-        tvStatus1 = findViewById(R.id.tvStatus1);
-        tvApprovalStatus1 = findViewById(R.id.tvApprovalStatus1);
-        tvRequestDate1 = findViewById(R.id.tvRequestDate1);
+        // Inisialisasi LinearLayout container
+        notificationContainer = findViewById(R.id.notificationContainer);
 
-        // Inisialisasi TextView notifikasi item 2
-        tvDateRange2 = findViewById(R.id.tvDateRange2);
-        tvStatus2 = findViewById(R.id.tvStatus2);
-        tvApprovalStatus2 = findViewById(R.id.tvApprovalStatus2);
-        tvRequestDate2 = findViewById(R.id.tvRequestDate2);
+        // Inisialisasi Firebase Database
+        databaseReference = FirebaseDatabase.getInstance().getReference("notifikasi");
 
-        // Inisialisasi ImageView untuk back button
-        ivBack = findViewById(R.id.ivBack);
+        // Mengambil data dari Firebase secara dinamis
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // Bersihkan kontainer setiap kali ada pembaruan
+                notificationContainer.removeAllViews();
 
-        // Set nilai text pada TextView notifikasi item 1
-        tvDateRange1.setText("Selasa, 12 Sep 2023 - Rabu, 13 Sep 2023");
-        tvStatus1.setText("Izin");
-        tvApprovalStatus1.setText("Belum disetujui");
-        tvRequestDate1.setText("Tanggal pengajuan: Senin, 11 Sep 2023");
+                // Jika data ada di Firebase
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                        // Ambil data dari child
+                        String jenisPengajuan = childSnapshot.child("jenisPengajuan").getValue(String.class);
+                        String mulaiCuti = childSnapshot.child("mulaiCuti").getValue(String.class);
+                        String status = childSnapshot.child("status").getValue(String.class);
 
-        // Set nilai text pada TextView notifikasi item 2
-        tvDateRange2.setText("Rabu, 4 Sep 2023");
-        tvStatus2.setText("Sakit");
-        tvApprovalStatus2.setText("Disetujui");
-        tvRequestDate2.setText("Tanggal pengajuan: Senin, 11 Sep 2023");
+                        // Menambahkan notifikasi baru ke layout
+                        addNotificationItem(jenisPengajuan, mulaiCuti, status);
+                    }
+                }
+            }
 
-        // Set OnClickListener untuk back button
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("FirebaseError", databaseError.getMessage());
+            }
+        });
+
+        // Tombol kembali
+        ImageView ivBack = findViewById(R.id.ivBack);
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Go back to the previous activity
-                onBackPressed(); // This will navigate back to the previous screen
+                // Kembali ke halaman sebelumnya
+                onBackPressed(); // Memanggil method onBackPressed() untuk kembali ke activity sebelumnya
             }
         });
+    }
+
+    // Fungsi untuk menambahkan item notifikasi baru ke LinearLayout
+    private void addNotificationItem(String jenisPengajuan, String mulaiCuti, String status) {
+        // Inflasi layout item notifikasi menggunakan LayoutInflater
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View notificationView = inflater.inflate(R.layout.notification_item, notificationContainer, false);
+
+        // Bind data ke elemen di layout yang sudah di-inflate
+        TextView tvDateRange = notificationView.findViewById(R.id.tvDateRange1);
+        TextView tvApprovalStatus = notificationView.findViewById(R.id.tvApprovalStatus1);
+        TextView tvStatus = notificationView.findViewById(R.id.tvStatus1);
+
+        // Set data dari Firebase ke TextView
+        tvDateRange.setText(jenisPengajuan != null ? jenisPengajuan : "Tidak Diketahui");
+        tvApprovalStatus.setText(status != null ? status : "Tidak Diketahui");
+        tvStatus.setText("Tanggal Pengajuan: " + (mulaiCuti != null ? mulaiCuti : "Tidak Diketahui"));
+
+        // Menambahkan notifikasi ke container
+        notificationContainer.addView(notificationView);
     }
 }

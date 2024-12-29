@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -33,24 +32,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private FusedLocationProviderClient fusedLocationProviderClient;
     private TextView locationInfoTextView;
     private Button navigateButton;
-    private ImageView ivBack; // Declare ImageView for back button
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-        // Initialize ImageView for back button
-        ivBack = findViewById(R.id.backArrow);
-
-        if (ivBack != null) {
-            ivBack.setOnClickListener(view -> onBackPressed());  // Back button action
-        } else {
-            // Log if ImageView is not found
-            Log.e("MapsActivity", "ivBack ImageView not found in layout.");
-        }
-
-        // Initialize the map fragment
+        // Setup for Map
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         if (mapFragment != null) {
@@ -62,10 +50,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         locationInfoTextView = findViewById(R.id.location_info_text_view);
         navigateButton = findViewById(R.id.navigate_button);
 
+        // Handle navigate button click
         navigateButton.setOnClickListener(v -> {
             Intent intent = new Intent(MapsActivity.this, AbsensiActivity.class);
             startActivity(intent);
         });
+
+        // Tombol Kembali
+        ImageView ivBack = findViewById(R.id.backArrow);
+        ivBack.setOnClickListener(v -> finish());
     }
 
     @Override

@@ -7,56 +7,54 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class edit_profilActivity extends AppCompatActivity {
 
-    private ImageView ivBack;
-    private Button btnSimpan;
+    private ImageView ivBackButton;
     private EditText statusPernikahanInput, nikInput, noTelpInput, alamatInput;
+    private Button buttonSimpan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profil);
+        setContentView(R.layout.activity_edit_profil); // Sesuaikan nama layout XML jika berbeda
 
-        // Inisialisasi elemen UI
-        ivBack = findViewById(R.id.ivBack);
-        btnSimpan = findViewById(R.id.buttonSimpan);
+        // Inisialisasi elemen-elemen UI
+        ivBackButton = findViewById(R.id.ivBackButton);
         statusPernikahanInput = findViewById(R.id.statusPernikahanInput);
         nikInput = findViewById(R.id.nikInput);
         noTelpInput = findViewById(R.id.noTelpInput);
         alamatInput = findViewById(R.id.alamatInput);
+        buttonSimpan = findViewById(R.id.buttonSimpan);
 
-        // Aksi saat tombol kembali ditekan
-        ivBack.setOnClickListener(new View.OnClickListener() {
+        // Tombol kembali
+        ivBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();  // Kembali ke activity sebelumnya
+                // Kembali ke aktivitas sebelumnya
+                finish();
             }
         });
 
-        // Aksi saat tombol simpan ditekan
-        btnSimpan.setOnClickListener(new View.OnClickListener() {
+        // Tombol simpan
+        buttonSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Ambil data dari EditText
-                String statusPernikahan = statusPernikahanInput.getText().toString();
-                String nik = nikInput.getText().toString();
-                String noTelp = noTelpInput.getText().toString();
-                String alamat = alamatInput.getText().toString();
+                // Ambil data dari input
+                String statusPernikahan = statusPernikahanInput.getText().toString().trim();
+                String nik = nikInput.getText().toString().trim();
+                String noTelp = noTelpInput.getText().toString().trim();
+                String alamat = alamatInput.getText().toString().trim();
 
-                // Lakukan validasi atau simpan data
+                // Validasi input
                 if (statusPernikahan.isEmpty() || nik.isEmpty() || noTelp.isEmpty() || alamat.isEmpty()) {
-                    // Tampilkan pesan error jika ada data yang kosong
-                    Toast.makeText(edit_profilActivity.this, "Semua field harus diisi!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(edit_profilActivity.this, "Harap lengkapi semua data!", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Lakukan penyimpanan data (contoh: simpan ke database atau kirim ke server)
-                    // Untuk demonstrasi, kita tampilkan pesan sukses
+                    // Simpan data (contoh: tampilkan Toast untuk simulasi)
                     Toast.makeText(edit_profilActivity.this, "Data berhasil disimpan!", Toast.LENGTH_SHORT).show();
 
-                    // Kembali ke activity sebelumnya setelah data disimpan
+                    // Kembali ke halaman sebelumnya (opsional)
                     finish();
                 }
             }

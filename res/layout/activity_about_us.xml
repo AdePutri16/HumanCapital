@@ -2,198 +2,209 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/gradient_background"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient_background">
 
-    <!-- Header -->
-    <TextView
-        android:id="@+id/header"
+    <!-- Header Section -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerSection"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:background="#1E3E62"
-        android:padding="16dp"
-        android:text="Tentang Kami"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:gravity="center"
-        android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <!-- Header Title -->
-    <ImageView
-        android:id="@+id/ivBack"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="Tombol Kembali"
-        android:src="@drawable/panah_kembali"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        <!-- Back Button -->
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Tombol Kembali"
+            android:src="@drawable/panah_kembali"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <!-- Konten Kosong -->
-    <View
-        android:id="@+id/content"
+        <!-- Header Title (Centered) -->
+        <!-- Header Text -->
+        <TextView
+            android:id="@+id/headerText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="152dp"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="Tentang kami"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Main Content -->
+    <ScrollView
+        android:id="@+id/mainContent"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/header"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
-    <!-- Poin 1 -->
-    <!-- Nomor poin digeser ke kanan sedikit -->
-
-    <!-- Penjelasan Poin 1 -->
-    <TextView
-        android:id="@+id/point1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="20dp"
-        android:text="1. Manajemen Kepegawaian Berbasis GPS dan Selfie"
-        android:textColor="#333333"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header" />
-
-    <TextView
-        android:id="@+id/desc1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Sistem manajemen kepegawaian ini memungkinkan pegawai untuk melakukan absensi dengan menggunakan GPS dan selfie, memastikan kehadiran yang akurat di lokasi yang tepat."
-        android:textColor="#333333"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/point1"
+        app:layout_constraintTop_toBottomOf="@id/headerSection"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="16dp" />
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <!-- Garis Pemisah Poin 1 -->
-    <View
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="8dp"
-        android:background="#E0E0E0"
-        app:layout_constraintTop_toBottomOf="@id/desc1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <!-- Main content inside ConstraintLayout -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
 
-    <!-- Poin 2 -->
-    <TextView
-        android:id="@+id/point2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="2. Pencatatan Kehadiran Otomatis"
-        android:textColor="#333333"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/desc1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="12dp" /> <!-- Nomor poin digeser ke kanan sedikit -->
+            <!-- Introduction -->
+            <TextView
+                android:id="@+id/tvIntroduction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="8sp"
+                android:paddingBottom="16dp"
+                android:text="Kami adalah platform manajemen kepegawaian yang bertujuan untuk memberikan solusi efisien dalam pengelolaan data kehadiran dan informasi pegawai. Dengan teknologi canggih, kami membantu organisasi untuk meningkatkan produktivitas, mengurangi kesalahan administratif, dan memberikan pengalaman terbaik bagi penggunanya."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Penjelasan Poin 2 -->
-    <TextView
-        android:id="@+id/desc2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Absensi dilakukan secara otomatis dengan memanfaatkan teknologi GPS dan selfie untuk memastikan pegawai hadir di tempat kerja sesuai waktu yang telah ditentukan."
-        android:textColor="#333333"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/point2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="16dp" />
+            <!-- Point 1 -->
+            <TextView
+                android:id="@+id/tvPoint1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Pendataan Pegawai:"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:paddingBottom="8dp"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@id/tvIntroduction"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Garis Pemisah Poin 2 -->
-    <View
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="8dp"
-        android:background="#E0E0E0"
-        app:layout_constraintTop_toBottomOf="@id/desc2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <TextView
+                android:id="@+id/tvDetailsPoint1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- Meliputi informasi dasar seperti nama, jabatan, dan unit kerja.\n- Mempermudah proses rekapitulasi data pegawai."
+                android:textSize="14sp"
+                android:lineSpacingExtra="8sp"
+                android:paddingBottom="16dp"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@id/tvPoint1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Poin 3 -->
-    <TextView
-        android:id="@+id/point3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="3. Sistem Keamanan dan Privasi"
-        android:textColor="#333333"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/desc2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="12dp" /> <!-- Nomor poin digeser ke kanan sedikit -->
+            <!-- Point 2 -->
+            <TextView
+                android:id="@+id/tvPoint2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. Sistem Kehadiran:"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:paddingBottom="8dp"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@id/tvDetailsPoint1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Penjelasan Poin 3 -->
-    <TextView
-        android:id="@+id/desc3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Teknologi selfie memastikan hanya pegawai yang sah yang dapat melakukan absensi, sementara GPS memberikan lokasi yang akurat untuk mencegah penyalahgunaan."
-        android:textColor="#333333"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/point3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="16dp" />
+            <TextView
+                android:id="@+id/tvDetailsPoint2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- Monitoring kehadiran pegawai secara real-time.\n- Menerapkan teknologi verifikasi seperti foto selfie dan lokasi GPS."
+                android:textSize="14sp"
+                android:lineSpacingExtra="8sp"
+                android:paddingBottom="16dp"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@id/tvPoint2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Garis Pemisah Poin 3 -->
-    <View
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="8dp"
-        android:background="#E0E0E0"
-        app:layout_constraintTop_toBottomOf="@id/desc3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <!-- Point 3 -->
+            <TextView
+                android:id="@+id/tvPoint3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. Rekapitulasi Data:"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:paddingBottom="8dp"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@id/tvDetailsPoint2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Poin 4: Versi Aplikasi -->
-    <TextView
-        android:id="@+id/point4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="4. Versi Aplikasi"
-        android:textColor="#333333"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/desc3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="12dp" /> <!-- Nomor poin digeser ke kanan sedikit -->
+            <TextView
+                android:id="@+id/tvDetailsPoint3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- Memberikan laporan kehadiran secara bulanan.\n- Memudahkan proses evaluasi kinerja pegawai."
+                android:textSize="14sp"
+                android:lineSpacingExtra="8sp"
+                android:paddingBottom="16dp"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@id/tvPoint3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Penjelasan Versi Aplikasi -->
-    <TextView
-        android:id="@+id/desc4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Aplikasi ini menggunakan versi terbaru dengan fitur-fitur terkini yang terus diperbarui untuk memberikan pengalaman terbaik bagi pengguna."
-        android:textColor="#333333"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/point4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="16dp" />
+            <!-- Point 4 -->
+            <TextView
+                android:id="@+id/tvPoint4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. Analisis Kinerja:"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:paddingBottom="8dp"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@id/tvDetailsPoint3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvDetailsPoint4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- Menyediakan data untuk analisis kinerja pegawai.\n- Memudahkan perencanaan pengembangan karir pegawai."
+                android:textSize="14sp"
+                android:lineSpacingExtra="8sp"
+                android:paddingBottom="16dp"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@id/tvPoint4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Version -->
+            <TextView
+                android:id="@+id/tvVersion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Versi Aplikasi: 1.0.0"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:paddingTop="24dp"
+                android:paddingBottom="8dp"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@id/tvDetailsPoint4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

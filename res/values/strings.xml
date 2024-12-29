@@ -25,8 +25,6 @@
         <item>Cerai Mati</item>
     </string-array>
 
-
-
     <!-- Daftar Bulan -->
     <string-array name="array_bulan">
         <item>Januari</item>
@@ -45,10 +43,10 @@
 
     <!-- Daftar Tahun -->
     <string-array name="array_tahun">
+        <item>2021</item>
         <item>2022</item>
         <item>2023</item>
         <item>2024</item>
-        <item>2025</item>
         <!-- Tambahkan tahun lain jika diperlukan -->
     </string-array>
 </resources>

@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    tools:context=".AbsensiActivity">
+    android:background="@android:color/white">
 
     <!-- Header Absensi -->
     <TextView
         android:id="@+id/header_absensi"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#1E3E62"
+        android:background="#003366"
         android:gravity="center"
         android:padding="16dp"
         android:text="Absensi"
@@ -25,16 +24,17 @@
 
     <!-- Tombol Kembali (Panah) -->
 
-    <!-- Layout Jam -->
+    <!-- Jam Icon dan Label -->
 
     <ImageView
         android:id="@+id/ivBack"
         android:layout_width="24dp"
-        android:layout_height="0dp"
+        android:layout_height="24dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="Tombol Kembali"
         android:src="@drawable/panah_kembali"
-        app:layout_constraintBottom_toBottomOf="@+id/header_absensi"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/header_absensi"
         app:layout_constraintVertical_bias="0.0" />
@@ -43,11 +43,11 @@
         android:id="@+id/jam_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
         app:layout_constraintTop_toBottomOf="@+id/header_absensi"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
 
         <ImageView
             android:id="@+id/clock_icon"
@@ -70,16 +70,16 @@
             app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Layout Lokasi -->
+    <!-- Lokasi Icon dan Label -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/lokasi_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
         app:layout_constraintTop_toBottomOf="@+id/jam_layout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
 
         <ImageView
             android:id="@+id/location_icon"
@@ -108,12 +108,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/primaryColor"
+        android:onClick="openCamera"
         android:text="Buka Kamera"
         app:layout_constraintTop_toBottomOf="@+id/lokasi_layout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Instruksi Foto Selfie -->
+    <!-- Instruksi untuk Foto Selfie -->
     <TextView
         android:id="@+id/instruction_label"
         android:layout_width="0dp"
@@ -126,7 +127,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Foto Selfie -->
+    <!-- View Foto Selfie -->
     <ImageView
         android:id="@+id/selfie_image_view"
         android:layout_width="150dp"
@@ -134,9 +135,9 @@
         android:layout_marginTop="16dp"
         android:contentDescription="Foto Selfie"
         android:scaleType="centerCrop"
-        app:layout_constraintTop_toBottomOf="@+id/instruction_label"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/instruction_label" />
 
     <!-- Switch Masuk dan Pulang -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -175,8 +176,9 @@
         android:backgroundTint="#003366"
         android:text="Kirim Absensi"
         android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/switch_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/switch_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

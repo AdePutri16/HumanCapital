@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/notif"
+    android:padding="8dp"
+    android:layout_marginBottom="8dp">
+
+    <!-- Teks Jenis Pengajuan -->
+    <TextView
+        android:id="@+id/tvDateRange1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        tools:ignore="MissingConstraints" />
+
+    <!-- Status Persetujuan -->
+    <TextView
+        android:id="@+id/tvApprovalStatus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Status: Menunggu Persetujuan"
+        android:textColor="#1B5E20"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvDateRange1"
+        tools:ignore="MissingConstraints" />
+
+    <!-- Waktu Mulai -->
+    <TextView
+        android:id="@+id/tvStatus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Tanggal pengajuan: Senin, 22 Sep 2024"
+        android:textColor="#757575"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvApprovalStatus1"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>

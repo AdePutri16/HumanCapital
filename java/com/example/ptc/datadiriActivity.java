@@ -9,13 +9,13 @@ import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ptc.pref.AppPreferences;
-import com.google.android.material.imageview.ShapeableImageView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -38,6 +38,10 @@ public class datadiriActivity extends AppCompatActivity {
         profilePicture = findViewById(R.id.imgProfile);
         updatePhotoButton = findViewById(R.id.btnUpdatePhoto);
 
+        // Listener untuk tombol kembali
+        ImageView ivBack = findViewById(R.id.ivBack);
+        ivBack.setOnClickListener(v -> finish());
+
         // Listener untuk tombol Update Foto
         updatePhotoButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,21 +54,13 @@ public class datadiriActivity extends AppCompatActivity {
             }
         });
 
-        // Listener untuk tombol Edit Profil
-        findViewById(R.id.btnEdit).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(datadiriActivity.this, edit_profilActivity.class));
-            }
-        });
-
-        // Menambahkan listener untuk tombol Kembali (ivBack)
-        findViewById(R.id.ivBack).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();  // Kembali ke activity sebelumnya
-            }
-        });
+//        // Listener untuk tombol Edit Profil
+//        findViewById(R.id.btnEdit).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(datadiriActivity.this, edit_profilActivity.class));
+//            }
+//        });
 
         // Memuat gambar profil dari penyimpanan
         loadImage();
