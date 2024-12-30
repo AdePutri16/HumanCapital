@@ -1,0 +1,293 @@
+:root {
+    --background: #1E3E62;
+    --primary: #f39c12;
+    --nav: #72BF78;
+    --font: #fff;
+    --hover: #DDD8D8;
+    --box1: #C4E1F6;
+    --box2: #F4EEEE;
+    --card: #C62E2E;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+.header {
+    background-color: #2c3e50;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+}
+
+.header .logo-text {
+    color: white;
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+.header .subtitle {
+    color: #f39c12;
+    font-size: 0.9em;
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-name {
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.profile-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    object-fit: cover;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #DDD8D8;
+    padding: 10px 0;
+    position: relative;
+}
+
+.navbar a, .navbar .dropdown {
+    color: #2c3e50;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 1em;
+    position: relative;
+}
+
+.navbar a:hover, .navbar .dropdown:hover > a {
+    background-color: #bdc3c7;
+    border-radius: 5px;
+}
+
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar .dropdown-content a {
+    color: #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9em;
+}
+
+.navbar .dropdown-content a:hover {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+/* Attendance Summary Styles */
+.attendance-summary {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: linear-gradient(to bottom, #1E3E62, #ffffff);
+    color: #000;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.attendance-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffffff 40%, #2980b9 90%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.status {
+    margin-top: 10px;
+}
+
+.status ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.status li {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.status span {
+    float: right;
+    font-weight: bold;
+}
+
+/* Attendance Table Styles */
+.attendance-table {
+    flex-grow: 1;
+    margin-left: 30px;
+}
+
+.attendance-table h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.attendance-table table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: white;
+}
+
+.attendance-table th, .attendance-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.attendance-table a {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.attendance-table a:hover {
+    text-decoration: underline;
+}
+
+/* Styles for the month and year selection dropdown */
+.select-month-year {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.select-month-year label {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.select-month-year select {
+    padding: 5px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.select-month-year button {
+    padding: 6px 15px;
+    font-size: 1em;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.select-month-year button:hover {
+    background-color: #e67e22;
+}
+
+
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 20px 0;
+    width: 100%;
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.footer-section {
+    margin: 10px;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+    background-color: #1a252f;
+    color: #dcdcdc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
