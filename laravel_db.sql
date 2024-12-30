@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 29, 2024 at 10:32 AM
+-- Generation Time: Dec 30, 2024 at 03:44 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.3.13
 
@@ -48,14 +48,11 @@ CREATE TABLE `absensi` (
 INSERT INTO `absensi` (`id`, `id_pegawai`, `tanggal`, `jam_masuk`, `jam_keluar`, `lokasi_masuk`, `lokasi_keluar`, `foto_masuk`, `foto_keluar`, `created_at`, `updated_at`) VALUES
 (1, 12, '2024-12-25', '23:03:00', NULL, '-4.0073656,119.6270772', NULL, NULL, NULL, '2024-12-25 07:03:55', '2024-12-25 07:03:55'),
 (3, 7, '2024-12-26', '20:07:00', NULL, '-5.1544064,119.455744', NULL, NULL, NULL, '2024-12-26 04:07:39', '2024-12-26 04:07:39'),
-(4, 9, '2024-12-26', '20:26:00', NULL, '-5.1544064,119.455744', NULL, 'images/pegawai/nnWPrM3nGv.jpeg', NULL, '2024-12-26 04:26:43', '2024-12-26 04:26:43'),
-(5, 10, '2024-12-26', '20:54:00', NULL, '-5.1544064,119.455744', NULL, 'images/pegawai/NmmurOxKc7.jpeg', NULL, '2024-12-26 04:54:57', '2024-12-26 04:54:57'),
-(6, 11, '2024-12-26', '21:07:00', NULL, '-5.1544064,119.455744', '-5.1544064,119.455744', 'images/pegawai/foto_masuk/l4Jxu1DGjh.jpeg', 'images/pegawai/8lSkAfd8bm.jpeg', '2024-12-26 05:07:22', '2024-12-26 05:14:33'),
-(7, 8, '2024-12-26', '22:08:00', '14:22:00', '-5.1544064,119.455744', '-5.1544064,119.455744', 'images/pegawai/jr3KsTY4xo.jpeg', 'images/pegawai/hLCZ4L7VDz.jpeg', '2024-12-26 06:08:26', '2024-12-26 06:22:41'),
-(8, 12, '2024-12-26', '22:28:00', '14:29:00', '-5.1544064,119.455744', '-4.0074025,119.627015', 'images/pegawai/i7PV1Jr8bg.jpeg', 'images/pegawai/x0AfK2UX6v.jpeg', '2024-12-26 06:28:32', '2024-12-26 06:29:21'),
-(9, 8, '2024-12-28', '11:39:00', '03:40:00', '-5.1544064,119.455744', '-4.007314,119.6270989', 'images/pegawai/wQ8WXEaBML.jpeg', 'images/pegawai/VW1sSOij3g.jpeg', '2024-12-27 19:39:56', '2024-12-27 19:40:27'),
-(10, 12, '2024-12-29', '09:22:00', '01:23:00', '-5.1544064,119.455744', '-5.1544064,119.455744', 'images/pegawai/SlihgKTcJ8.jpeg', 'images/pegawai/XEsWuljrJI.jpeg', '2024-12-28 17:22:54', '2024-12-28 17:23:29'),
-(11, 8, '2024-12-29', '17:23:00', NULL, '-4.0283503,119.6361414', NULL, 'images/pegawai/GHz3YLFest.jpeg', NULL, '2024-12-29 01:23:48', '2024-12-29 01:23:48');
+(16, 12, '2024-12-30', '10:23:00', '11:44:00', '-5.1544064,119.455744', '-3.8436864,119.8358528', 'images/pegawai/gAj8RJZPJe.jpeg', 'images/pegawai/cHJCk8OazH.jpeg', '2024-12-29 18:23:21', '2024-12-30 03:44:47'),
+(17, 13, '2024-12-30', '11:01:00', NULL, '-5.1544064,119.455744', NULL, 'images/pegawai/Nns1rtElR3.jpeg', NULL, '2024-12-29 19:02:38', '2024-12-29 19:02:38'),
+(18, 8, '2024-12-30', '19:54:00', NULL, '-3.8436864,119.8358528', NULL, 'images/pegawai/ooEmkKr3Rw.jpeg', NULL, '2024-12-30 03:54:41', '2024-12-30 03:54:41'),
+(19, 15, '2024-12-30', '20:01:00', '12:02:00', '-3.8436864,119.8358528', '-3.8436864,119.8358528', 'images/pegawai/sjt2vPTAt4.jpeg', 'images/pegawai/3ey7U1jzvF.jpeg', '2024-12-30 04:01:58', '2024-12-30 04:02:35'),
+(20, 19, '2024-12-30', '22:36:00', '14:37:00', '-5.1544064,119.455744', '-5.1544064,119.455744', 'images/pegawai/Hq8mEBUZ7R.jpeg', 'images/pegawai/Rys0WQYpV6.jpeg', '2024-12-30 06:37:06', '2024-12-30 06:37:35');
 
 -- --------------------------------------------------------
 
@@ -295,14 +292,18 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`id`, `user_id`, `image_path`, `nama`, `nip`, `tmpt_lahir`, `tgl_lahir`, `tmt`, `pendidikan`, `tahun`, `jenis_kelamin`, `nik`, `jabatan`, `status_kawin`, `no_tlp`, `email`, `role`, `created_at`, `updated_at`, `sisa_cuti`) VALUES
-(7, 8, 'images/pegawai/w0Amu1t9HUjAJ9BZrYeQHN7m66ckH1VHQ6YbQoRf.png', 'laskar pelangi', '777273862173665', 'Makassar', '2024-12-03', '2024-12-22', 'smk3', 2023, 'Perempuan', '737283629826388', 'Dosen', 'Menikah', '0897675427656', 'ray@gmail.com', NULL, '2024-12-22 08:56:05', '2024-12-27 11:49:49', 12),
+(7, 8, 'images/pegawai/w0Amu1t9HUjAJ9BZrYeQHN7m66ckH1VHQ6YbQoRf.png', 'laskar pelangi', '777273862173665', 'Makassar', '2024-12-03', '2024-12-22', 'smk3', 2023, 'Perempuan', '737283629826388', 'Dosen', 'Menikah', '0897675427656', 'ray@gmail.com', NULL, '2024-12-22 08:56:05', '2024-12-30 03:53:38', 13),
 (8, 9, 'images/pegawai/7QkW41yer2akeXv9iM309vsxFm9yexhDo9PHVL2L.jpg', 'Annisya Eka Pratiwi Aprilia', '19023556763442', 'Parepare', '2024-12-09', '2024-12-25', 'S1', 2019, 'Perempuan', '7372146354338357', 'Dosen', 'Menikah', '085678454326', 'nirwana@gmail.com', NULL, '2024-12-22 09:17:46', '2024-12-22 09:17:46', 12),
-(9, 10, 'images/pegawai/Ycox10WU6QrzBKf2j3KOVQNFwtBHxJnxywJXltIg.png', 'ray', '09281371289012', 'Bulukumba', '2024-12-26', '2024-12-28', 'S1', 2023, 'Laki-laki', '7372659823987', 'staf', 'Menikah', '09876887655', 'adhevutry30@gmail.com', NULL, '2024-12-22 22:13:23', '2024-12-22 22:13:23', 12),
-(10, 11, 'images/pegawai/WIPA2Cu5nZrcUbEHl4xglfPfJOqM7YdSaA5BlB7R.png', 'jojo', '09281371289056', 'Bulukumba', '2024-02-22', '2024-12-26', 'S1', 2023, 'Laki-laki', '7372659823980', 'staf', 'Menikah', '09876887655', 'adhevutry30@gmail.com', NULL, '2024-12-22 23:17:25', '2024-12-22 23:17:25', 12),
+(10, 11, 'images/pegawai/WIPA2Cu5nZrcUbEHl4xglfPfJOqM7YdSaA5BlB7R.png', 'jojo', '09281371289056', 'Bulukumba', '2024-02-22', '2024-12-26', 'S1', 2023, 'Laki-laki', '7372659823980', 'staf', 'Menikah', '09876887655', 'adhevutry30@gmail.com', NULL, '2024-12-22 23:17:25', '2024-12-30 03:42:51', 13),
 (11, 12, 'images/pegawai/80SB5VHfZ45ky3cKPv1N1cwmyULTaUQNnXTwKOLN.png', 'Ahmad Syarif tes', '182684648362522', 'Bulukumba', '2024-07-08', '2024-12-03', 'S1', 2023, 'Laki-laki', '73720198398727', 'staf', 'Menikah', '09876887655', 'adhevutry30@gmail.com', NULL, '2024-12-23 04:08:11', '2024-12-23 04:08:39', 12),
-(12, 13, 'images/pegawai/bjhwMH3OhOcOpI3D0FO1yYbQoaPY8ebSARprmjXl.png', 'Salma', '182684648362533', 'Bulukumba', '2024-12-05', '2024-12-21', 'S1', 2023, 'Laki-laki', '73720198398709', 'staf', 'Menikah', '09876887655', 'adhevutry30@gmail.com', NULL, '2024-12-24 08:49:10', '2024-12-24 09:15:41', 33),
+(12, 13, 'images/pegawai/bjhwMH3OhOcOpI3D0FO1yYbQoaPY8ebSARprmjXl.png', 'Salma', '182684648362533', 'Bulukumba', '2024-12-05', '2024-12-21', 'S1', 2023, 'Laki-laki', '73720198398709', 'staf', 'Menikah', '09876887655', 'adhevutry30@gmail.com', NULL, '2024-12-24 08:49:10', '2024-12-29 19:33:11', 165),
 (13, 14, 'images/pegawai/thhNM3pOvojs85TtBtSSMu0gAGZyJYkglBfiUo6r.png', 'cici', '7128361782312387', 'parepare', '2024-12-12', '2024-12-20', 'S1', 2023, 'Perempuan', '77829167635253', 'Dosen', 'Menikah', '089987876876', 'adeputribustan@gmail.com', NULL, '2024-12-26 06:03:48', '2024-12-26 06:03:48', 12),
-(14, 15, 'images/pegawai/GobpcEfNzSUq5iWNzk0N2jDv2Bav9aGDES7tS0CH.png', 'Wana', '1927189372632826', 'Parepare', '2024-12-03', '2024-12-25', 'SMK', 2023, 'Perempuan', '7319832612367123', 'Dosen', 'Menikah', '09876887655', 'adhevutry30@gmail.com', NULL, '2024-12-26 17:50:07', '2024-12-26 17:50:07', 12);
+(14, 15, 'images/pegawai/GobpcEfNzSUq5iWNzk0N2jDv2Bav9aGDES7tS0CH.png', 'Wana', '1927189372632826', 'Parepare', '2024-12-03', '2024-12-25', 'SMK', 2023, 'Perempuan', '7319832612367123', 'Dosen', 'Menikah', '09876887655', 'adhevutry30@gmail.com', NULL, '2024-12-26 17:50:07', '2024-12-30 04:03:07', 13),
+(15, 18, 'images/pegawai/pRrkffR7Utl9pZqyVfz4NMBDPqosbWQ07aWrJi67.jpg', 'Andi Sri Rahayu Putri', '1927189372632826', 'Parepare', '2024-12-16', '2024-12-25', 'SMK', 2022, 'Laki-laki', '73947564752923', 'Dosen', 'Menikah', '09876887655', 'adhevutry30@gmail.com', NULL, '2024-12-29 12:25:23', '2024-12-29 12:26:12', 12),
+(16, 19, 'images/pegawai/OTYN6Yv1jsQTbgzESYoHLZvY5GwvSRuw4sqtJYE5.jpg', 'Nada Istiana putri', '128639437493649', 'parepare', '2024-12-10', '2024-12-25', 'S1', 2024, 'Perempuan', '737282389213713', 'Dosen', 'Menikah', '089725372865', 'nada@gmail.com', NULL, '2024-12-29 18:35:45', '2024-12-30 06:39:35', 14),
+(17, 21, 'images/pegawai/dKSmIHYzyOKCab2EwFOxMJYNqL2wDqEUDYGY39lu.jpg', 'iin', '1998263876389', 'parepare', '2024-12-17', '2024-12-20', 'SMK', 2024, 'Laki-laki', '737281321263716', 'Dosen', 'Menikah', '09878787876767', 'adeputribustan@gmail.com', NULL, '2024-12-30 02:22:51', '2024-12-30 02:22:51', 12),
+(18, 26, 'images/pegawai/2YuJcFZI7iAjOvE6ZvOBGHUQocHkVSQK2yOTYi8j.jpg', 'Annisya Eka', '198789287163867', 'parepare', '2024-12-05', '2024-12-17', 'SMK', 2024, 'Perempuan', '737281321263716', 'lab', 'Menikah', '08983352792976', 'putri@gmail.com', NULL, '2024-12-30 03:24:39', '2024-12-30 03:38:45', 12),
+(19, 35, 'images/pegawai/nefYY3mUpNlaWhPHjeRmlhjkM2WtA7Hwlpwxtkiw.jpg', 'Prabu Adi', '1987892871638387', 'parepare', '2024-12-10', '2024-12-25', 'S1', 2024, 'Laki-laki', '7372813212637088', 'Dosen', 'Menikah', '0897686257992', 'iin@gmail.com', NULL, '2024-12-30 06:20:19', '2024-12-30 07:08:08', 12);
 
 -- --------------------------------------------------------
 
@@ -340,29 +341,25 @@ INSERT INTO `pengajuan_cuti` (`id`, `pegawai_id`, `nama_lengkap`, `jabatan`, `ni
 (15, 8, 'dimas', 'Dosen', '1233721312890', 'alasan-penting', '2024-12-25', '2024-12-25', 'jln sawi', '2024-12-22 21:46:53', '2024-12-22 21:46:53', 'Menunggu Validasi', 9),
 (16, 8, 'saya', 'Kepala Lab', '1977005467363', 'alasan-penting', '2024-12-25', '2024-12-26', 'jln', '2024-12-22 21:49:45', '2024-12-22 21:49:45', 'Menunggu Validasi', 9),
 (17, 8, 'saya', 'Kepala Lab', '1977005467273', 'luar-tanggungan-negara', '2024-12-25', '2024-12-26', 'jln jambu', '2024-12-22 22:07:12', '2024-12-22 22:07:12', 'Menunggu Validasi', 9),
-(18, 9, 'rayyan', 'Dosen', '197689324758', 'luar-tanggungan-negara', '2024-12-25', '2024-12-26', 'jalan mangga', '2024-12-22 22:18:22', '2024-12-22 22:18:22', 'Menunggu Validasi', 10),
-(19, 9, 'rayyan', 'Dosen', '19345623128739', 'luar-tanggungan-negara', '2024-12-25', '2024-12-26', 'jln sawi', '2024-12-22 22:35:28', '2024-12-22 22:35:28', 'Menunggu Validasi', 10),
-(20, 9, 'soleha', 'pegawai', '28836872540972', 'luar-tanggungan-negara', '2024-12-25', '2024-12-26', 'jln sawi', '2024-12-22 22:37:08', '2024-12-22 22:37:08', 'Menunggu Validasi', 10),
-(21, 9, 'sisi', 'Kepala Lab', '9213779127312', 'luar-tanggungan-negara', '2024-12-24', '2024-12-25', 'jln', '2024-12-22 22:44:26', '2024-12-22 22:44:26', 'Menunggu Validasi', 10),
-(22, 9, 'sisu', 'Kepala Lab', '9213779127389', 'luar-tanggungan-negara', '2024-12-26', '2024-12-31', 'jln sawi', '2024-12-22 22:58:08', '2024-12-22 22:58:08', 'Menunggu Validasi', 10),
-(23, 9, 'sinta', 'Kepala Lab', '9213779127314', 'luar-tanggungan-negara', '2024-12-24', '2024-12-26', 'jln sawi', '2024-12-22 22:58:49', '2024-12-22 22:58:49', 'Menunggu Validasi', 10),
-(24, 9, 'sintia', 'Kepala Lab', '9213779127316', 'luar-tanggungan-negara', '2024-12-24', '2024-12-26', 'jln sawi', '2024-12-22 23:05:04', '2024-12-22 23:05:04', 'Menunggu Validasi', 10),
-(25, 9, 'pila', 'Kepala Lab', '92137791273169', 'luar-tanggungan-negara', '2024-12-25', '2024-12-26', 'jln sawi', '2024-12-22 23:05:59', '2024-12-22 23:05:59', 'Menunggu Validasi', 10),
 (26, 10, 'JOjo', '', '', 'luar-tanggungan-negara', '2024-12-10', '2024-12-24', '', NULL, '2024-12-22 23:20:35', 'Disetujui', 11),
 (27, 10, 'jiji', 'Kepala Lab', '92137791273874', 'luar-tanggungan-negara', '2024-12-25', '2024-12-26', 'jln sawi', '2024-12-22 23:22:53', '2024-12-22 23:22:53', 'Menunggu Validasi', 11),
 (28, 10, 'siska', 'Kepala Lab', '92137791273843', 'luar-tanggungan-negara', '2024-12-24', '2024-12-26', 'jln sawi', '2024-12-22 23:34:31', '2024-12-22 23:35:02', 'Disetujui', 11),
-(29, 10, 'tita', 'Kepala Prodi Ilmu Komputer', '192898217362178', 'luar-tanggungan-negara', '2024-12-27', '2024-12-28', 'jln sawi', '2024-12-22 23:43:20', '2024-12-22 23:43:20', 'pending', 11),
+(29, 10, 'tita', 'Kepala Prodi Ilmu Komputer', '192898217362178', 'luar-tanggungan-negara', '2024-12-27', '2024-12-28', 'jln sawi', '2024-12-22 23:43:20', '2024-12-30 06:23:14', 'Disetujui', 11),
 (30, 10, 'syarif', 'Kepala Lab', '12337213128600', 'tahunan', '2024-12-24', '2024-12-26', 'jln', '2024-12-23 03:23:08', '2024-12-23 03:23:08', 'pending', 11),
 (31, 10, 'syarif', 'Kepala Lab', '12337213128603', 'alasan-penting', '2024-12-26', '2024-12-27', 'jln sawi', '2024-12-23 03:52:27', '2024-12-23 03:53:12', 'Disetujui', 11),
 (32, 10, 'jelita', 'staf', '09281371289003', 'melahirkan', '2024-12-25', '2024-12-27', 'jln sawi', '2024-12-23 03:53:59', '2024-12-23 03:55:24', 'Disetujui', 11),
-(33, 10, 'dina', 'Dosen', '87721853261482', 'tahunan', '2024-12-25', '2024-12-27', 'jlnn jensud', '2024-12-23 04:01:25', '2024-12-23 04:01:25', 'pending', 11),
+(33, 10, 'dina', 'Dosen', '87721853261482', 'tahunan', '2024-12-25', '2024-12-27', 'jlnn jensud', '2024-12-23 04:01:25', '2024-12-30 03:42:51', 'Disetujui', 11),
 (34, 10, 'dina', 'Dosen', '2388747257653', 'tahunan', '2024-12-24', '2024-12-27', 'jln sawi', '2024-12-23 04:02:20', '2024-12-23 04:02:20', 'pending', 11),
 (35, 10, 'dina', 'Dosen', '23887479989273', 'alasan-penting', '2024-12-24', '2024-12-27', 'jln sawi', '2024-12-23 04:04:27', '2024-12-23 04:04:27', 'pending', 11),
 (36, 12, 'salma', 'dosen', '198231172893125', 'alasan-penting', '2024-12-19', '2024-12-28', 'jln', '2024-12-24 09:00:11', '2024-12-24 09:01:01', 'Disetujui', 13),
 (37, 12, 'adrian', 'dosen', '2878751534152', 'luar-tanggungan-negara', '2024-12-27', '2024-12-31', 'jln', '2024-12-24 09:10:45', '2024-12-24 09:10:45', 'pending', 13),
 (38, 12, 'riswan', 'kepala lab', '8326876274648', 'alasan-penting', '2024-12-26', '2024-12-28', 'jln', '2024-12-24 09:15:23', '2024-12-24 09:15:41', 'Disetujui', 13),
 (39, 14, 'annisya', 'Dosen', '92389827432293', 'tahunan', '2024-12-30', '2024-12-31', 'jln jensud', '2024-12-27 12:19:46', '2024-12-27 12:19:46', 'pending', 15),
-(40, 11, 'Ahmad Syarif tes', 'staf', '182684648362522', 'alasan-penting', '2024-12-30', '2024-12-31', 'jendral sudirman', '2024-12-28 17:24:25', '2024-12-28 17:24:25', 'pending', 12);
+(40, 11, 'Ahmad Syarif tes', 'staf', '182684648362522', 'alasan-penting', '2024-12-30', '2024-12-31', 'jendral sudirman', '2024-12-28 17:24:25', '2024-12-28 17:24:25', 'pending', 12),
+(41, 12, 'Salma', 'staf', '182684648362533', 'alasan-penting', '2024-12-31', '2025-05-13', 'jln', '2024-12-29 19:33:11', '2024-12-29 19:33:11', 'pending', 13),
+(42, 7, 'laskar pelangi', 'Dosen', '777273862173665', 'alasan-penting', '2024-12-31', '2025-01-02', 'lorong', '2024-12-30 03:53:38', '2024-12-30 03:53:38', 'pending', 8),
+(43, 14, 'Wana', 'Dosen', '1927189372632826', 'alasan-penting', '2024-12-31', '2025-01-02', 'lorong pelita', '2024-12-30 04:03:07', '2024-12-30 04:05:00', 'Ditolak', 15),
+(44, 16, 'Nada Istiana putri', 'Dosen', '128639437493649', 'alasan-penting', '2024-12-31', '2025-01-02', 'lorong pelita', '2024-12-30 06:38:09', '2024-12-30 06:39:35', 'Disetujui', 19);
 
 -- --------------------------------------------------------
 
@@ -485,11 +482,30 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`, `created_at`, `update
 (8, 'laskar', '$2y$12$emmocpwdUBedsordcKJIHeyR7BXyOu4La9UxE.B7RxjxcFnTjJjR6', 'pegawai', '2024-12-22 08:41:45', '2024-12-22 08:41:45'),
 (9, 'popi', '$2y$12$fRnCBVpZZ29jMDi12qEGouQx4ffKt39Je7JNgAPlrnAy996QwXB8m', 'pegawai', '2024-12-22 09:15:39', '2024-12-22 09:15:39'),
 (10, 'ray', '$2y$12$G3Ne66ZMHb7AizhNMngwXeKmoE81oeeK1PdhKuERRFSm6ABcgvnXa', 'pegawai', '2024-12-22 22:11:46', '2024-12-22 22:11:46'),
-(11, 'jojo', '$2y$12$da5p363dQrFpVWtFdhtfPehVNR.bB.yNexKVETflVS2cp.fXcF//S', 'pegawai', '2024-12-22 23:16:35', '2024-12-22 23:16:35'),
+(11, 'jojo', '$2y$12$hYdAJRTm80hFBji8gM8q/ORAzNb4LTqTb6AV35L04K2LYtpqxT7IG', 'pegawai', '2024-12-22 23:16:35', '2024-12-29 04:28:48'),
 (12, 'syarif', '$2y$12$gVMzqc/l7qZoZOLOGUPFyOFnqBUZDk/vWJpSvvR4cqx0f51sETCEi', 'pegawai', '2024-12-23 04:06:59', '2024-12-23 04:06:59'),
-(13, 'salma', '$2y$12$.f2xWmEEMPRerBSaczyvIe07pFwgrXd.AmOcFt4CpQHfltXDWpyLy', 'pegawai', '2024-12-24 08:48:36', '2024-12-24 08:48:36'),
+(13, 'salma', '$2y$12$82Fk58QDfKfDAKa3Rx3dGuwnPq3eaT7zorJFQLUqhOmYbKchFg9q.', 'pegawai', '2024-12-24 08:48:36', '2024-12-29 19:03:52'),
 (14, 'cici', '$2y$12$8edRZoF8nroKeX3ET8vfUuLwrGJeIy.pL4ivfkBedG6G1KJomBCdW', 'pegawai', '2024-12-26 06:02:31', '2024-12-26 06:02:31'),
-(15, 'wana', '$2y$12$Qoqf3TuZ54oYpRfUwTFkru04TjCuhR1EwBAO8wMUPGSYYSO0kwLBy', 'pegawai', '2024-12-26 17:48:48', '2024-12-26 17:48:48');
+(15, 'wana', '$2y$12$8Y17F9TtS5iw3VQvUBdvmOQcGh9FoWa3J33ENmdxuwGjcbPXXgv26', 'pegawai', '2024-12-26 17:48:48', '2024-12-30 04:03:39'),
+(17, 'Ade', '$2y$12$MGlNJk6Iw0MRE4AoJxyfZOIfwe8DSjrhqsKXcwy/VKmjWkZA4w.H6', 'pegawai', '2024-12-29 12:16:37', '2024-12-29 12:16:37'),
+(18, 'sri', '$2y$12$aiS4R4NnheK.QyKRJSopr.MAHN1t1kP2udvuXfQZD9c4PEZdRqiLu', 'pegawai', '2024-12-29 12:23:12', '2024-12-29 12:23:12'),
+(19, 'nada', '$2y$12$6k5.fZTclsmxgpAzR1u9auF.zZfZP3aK0V2z/K.f9u9LBSBbw8mki', 'pegawai', '2024-12-29 18:34:37', '2024-12-30 06:38:47'),
+(20, 'Nirwana', '$2y$12$crn3207Ut0SNPRDSQxnIBuKgVokqycsLoHPr1VVDQn97G9JziVt3i', 'pegawai', '2024-12-29 18:53:25', '2024-12-29 18:53:25'),
+(21, 'Annisya', '$2y$12$bJI2DU2U1s.xBmExKir6cuku5ZrVG1UifOQdRA/a5kKFQvcq8wbXq', 'pegawai', '2024-12-30 02:13:54', '2024-12-30 02:13:54'),
+(22, 'Nanir', '$2y$12$CXKeFjuAbHreAJFdqj07DeR5ImGrxS32ippplATiHijSnEH2R59IC', 'pegawai', '2024-12-30 03:00:34', '2024-12-30 03:00:34'),
+(23, 'tess', '$2y$12$No/yhwPonzMjgb3VyKInguXg6JxZylxhuXh3JtrW06iC0xLGqjUlG', 'pegawai', '2024-12-30 03:07:45', '2024-12-30 03:07:45'),
+(24, 'coba', '$2y$12$pmnL2r3FeJFDGBOopgzpT.A.6bdaxTAluVLofZ15KrD0lbrH8oJx.', 'pegawai', '2024-12-30 03:14:07', '2024-12-30 03:14:07'),
+(25, 'opr', '$2y$12$lhIKIMCKk0ZBUYGVj3OMNuN9DUgGWar7ZtOAKi9lRDBvJjJ7R4TAS', 'operator', '2024-12-30 03:23:39', '2024-12-30 03:23:39'),
+(26, 'coba skli', '$2y$12$exDfZzlz8ABjh89MMDvlH.MvB/JESasaT7w6asmQtoZ.Lq34BJ1yW', 'pegawai', '2024-12-30 03:23:58', '2024-12-30 03:23:58'),
+(27, 'opera', '$2y$12$Z/HJP867SF2xJJeYluqqa.eVHkeHRu7Yb7GOX0Y53yjuEYpiXgOyW', 'operator', '2024-12-30 03:25:48', '2024-12-30 03:25:48'),
+(28, 'Mala', '$2y$12$A4MEMJXh1DeoQ2BlXbnEz.OjdNxcHMCcrDfx0ExToeo9F6yun.H7G', 'pegawai', '2024-12-30 03:26:21', '2024-12-30 03:26:21'),
+(29, 'Putri', '$2y$12$Sar17zAjhIxI3H4PKQZyO.JPwSpnIJGW9t6tzubBcBOWIWaXRuwoS', 'pegawai', '2024-12-30 03:28:51', '2024-12-30 03:28:51'),
+(30, 'tes', '$2y$12$OHQty6OMw..8GBlL5.0fQOnY4SCjcEiZf8dGn1MlMGZbc0ytJdWxu', 'operator', '2024-12-30 03:30:36', '2024-12-30 03:30:36'),
+(31, 'coba test', '$2y$12$JGLV3dCHO9rgTx6HIkIHYu.5xOHqf907KxlESc5Ww8dcYRgtj4xXe', 'pegawai', '2024-12-30 03:31:02', '2024-12-30 03:31:02'),
+(32, 'cobatest', '$2y$12$v0tdJerRRzTuhAE/zoE8z.6kJm/Ri7UmriY15e7M8XAS3x0SJiLQ2', 'pegawai', '2024-12-30 03:33:34', '2024-12-30 03:33:34'),
+(33, 'umrah', '$2y$12$7tgsvisIUMDVMx6Um8ru5Oz1ctjrujT9YaSY25vaGi9RUgxElvoKq', 'pegawai', '2024-12-30 06:06:55', '2024-12-30 06:06:55'),
+(34, 'operator2', '$2y$12$R35FYbyQz6IHwU5kITL1O..7oZvBMGIM1P5bXjZRxp8jNKcqJ.9aK', 'operator', '2024-12-30 06:18:38', '2024-12-30 06:18:38'),
+(35, 'prabu', '$2y$12$6Pi/utfR9IDv/VPZQTq/lOgnClihR6y8fxHNzsADCPwJLIYeWJCh6', 'pegawai', '2024-12-30 06:19:29', '2024-12-30 06:19:29');
 
 --
 -- Indexes for dumped tables
@@ -618,7 +634,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `absensi`
 --
 ALTER TABLE `absensi`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `databseny`
@@ -654,13 +670,13 @@ ALTER TABLE `notifikasis`
 -- AUTO_INCREMENT for table `pegawai`
 --
 ALTER TABLE `pegawai`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `pengajuan_cuti`
 --
 ALTER TABLE `pengajuan_cuti`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -684,7 +700,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Constraints for dumped tables
